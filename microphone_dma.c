@@ -101,70 +101,106 @@ int main() {
 
     // A depender da intensidade do som, acende LEDs específicos.
     switch (intensity) {
-      case 0: break; // Se o som for muito baixo, não acende nada.
+      case 0:
+          // Nenhum LED aceso.
+          break;
+
       case 1:
-        npSetLED(12, 0, 0, 80); // Acende apenas o centro.
-        break;
+          // Acende a base da coluna central
+          npSetLED(0, 0,255,255); 
+          npSetLED(1, 0,255,255);
+          npSetLED(2, 0,255,255);
+          npSetLED(3, 0,255,255);
+          npSetLED(4, 0,255,255);  
+          break;
+
       case 2:
-        npSetLED(12, 0, 0, 120); // Acente o centro.
+          // Acende a base + um nível acima
+          npSetLED(0, 0,255,255); 
+          npSetLED(1, 0,255,255);
+          npSetLED(2, 0,255,255);
+          npSetLED(3, 0,255,255);
+          npSetLED(4, 0,255,255);  
+          npSetLED(5, 0,255,0);
+          npSetLED(6, 0,255,0);
+          npSetLED(7, 0,255,0);
+          npSetLED(8, 0,255,0);
+          npSetLED(9, 0,255,0); 
 
-        // Primeiro anel.
-        npSetLED(7, 0, 0, 80);
-        npSetLED(11, 0, 0, 80);
-        npSetLED(13, 0, 0, 80);
-        npSetLED(17, 0, 0, 80);
-        break;
+          break;
+
       case 3:
-        // Centro.
-        npSetLED(12, 60, 60, 0);
+          // Acende a coluna central mais alto + inicia laterais
+          npSetLED(0, 0,255,255); 
+          npSetLED(1, 0,255,255);
+          npSetLED(2, 0,255,255);
+          npSetLED(3, 0,255,255);
+          npSetLED(4, 0,255,255);  
+          npSetLED(5, 0,255,0);
+          npSetLED(6, 0,255,0);
+          npSetLED(7, 0,255,0);
+          npSetLED(8, 0,255,0);
+          npSetLED(9, 0,255,0); 
+          npSetLED(10, 255,255,0);
+          npSetLED(11, 255,255,0);
+          npSetLED(12, 255,255,0);
+          npSetLED(13, 255,255,0);
+          npSetLED(14, 255,255,0); 
+          break;
 
-        // Primeiro anel.
-        npSetLED(7, 0, 0, 120);
-        npSetLED(11, 0, 0, 120);
-        npSetLED(13, 0, 0, 120);
-        npSetLED(17, 0, 0, 120);
-
-        // Segundo anel.
-        npSetLED(2, 0, 0, 80);
-        npSetLED(6, 0, 0, 80);
-        npSetLED(8, 0, 0, 80);
-        npSetLED(10, 0, 0, 80);
-        npSetLED(14, 0, 0, 80);
-        npSetLED(16, 0, 0, 80);
-        npSetLED(18, 0, 0, 80);
-        npSetLED(22, 0, 0, 80);
-        break;
       case 4:
-        // Centro.
-        npSetLED(12, 255, 0, 0);
+          // Acende todas as colunas até o topo
+          npSetLED(0, 0,255,255); 
+          npSetLED(1, 0,255,255);
+          npSetLED(2, 0,255,255);
+          npSetLED(3, 0,255,255);
+          npSetLED(4, 0,255,255);  
+          npSetLED(5, 255, 0, 0); 
+          npSetLED(6, 255, 0, 0);
+          npSetLED(7, 255, 0, 0);
+          npSetLED(8, 255, 0, 0);
+          npSetLED(9, 255, 0, 0); 
+          npSetLED(10, 255,255,0);
+          npSetLED(11, 255,255,0);
+          npSetLED(12, 255,255,0);
+          npSetLED(13, 255,255,0);
+          npSetLED(14, 255,255,0);
+          npSetLED(15, 255,100,0);
+          npSetLED(16, 255,100,0);
+          npSetLED(17, 255,100,0);
+          npSetLED(18, 255,100,0);
+          npSetLED(19, 255,100,0);
+          break;
 
-        // Primeiro anel.
-        npSetLED(7, 255, 0, 180);
-        npSetLED(11, 255, 0, 180);
-        npSetLED(13, 255, 0, 180);
-        npSetLED(17, 255, 0, 180);
-
-        // Segundo anel.
-        npSetLED(2, 0, 0, 120);
-        npSetLED(6, 0, 0, 120);
-        npSetLED(8, 0, 0, 120);
-        npSetLED(10, 0, 0, 120);
-        npSetLED(14, 0, 0, 120);
-        npSetLED(16, 0, 0, 120);
-        npSetLED(18, 0, 0, 120);
-        npSetLED(22, 0, 0, 120);
-
-        // Terceiro anel.
-        npSetLED(1, 0, 180, 80);
-        npSetLED(3, 0, 180, 80);
-        npSetLED(5, 0, 180, 80);
-        npSetLED(9, 0, 180, 80);
-        npSetLED(15, 0, 180, 80);
-        npSetLED(19, 0, 180, 80);
-        npSetLED(21, 0, 180, 80);
-        npSetLED(23, 0, 180, 80);
-        break;
-    }
+      case 5:
+          // Acende a matriz toda simulando pico máximo
+          npSetLED(0, 0,255,255); 
+          npSetLED(1, 0,255,255);
+          npSetLED(2, 0,255,255);
+          npSetLED(3, 0,255,255);
+          npSetLED(4, 0,255,255);  
+          npSetLED(5, 255, 0, 0); 
+          npSetLED(6, 255, 0, 0);
+          npSetLED(7, 255, 0, 0);
+          npSetLED(8, 255, 0, 0);
+          npSetLED(9, 255, 0, 0); 
+          npSetLED(10, 255,255,0);
+          npSetLED(11, 255,255,0);
+          npSetLED(12, 255,255,0);
+          npSetLED(13, 255,255,0);
+          npSetLED(14, 255,255,0);
+          npSetLED(15, 255,100,0);
+          npSetLED(16, 255,100,0);
+          npSetLED(17, 255,100,0);
+          npSetLED(18, 255,100,0);
+          npSetLED(19, 255,100,0);
+          npSetLED(20, 255, 0, 0); 
+          npSetLED(21, 255, 0, 0);
+          npSetLED(22, 255, 0, 0);
+          npSetLED(23, 255, 0, 0);
+          npSetLED(24, 255, 0, 0);     
+          break;
+  }
     // Atualiza a matriz.
     npWrite();
 
