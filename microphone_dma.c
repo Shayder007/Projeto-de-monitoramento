@@ -104,101 +104,82 @@ int main() {
       case 0:
           // Nenhum LED aceso.
           break;
-
+  
       case 1:
-          // Acende a base da coluna central
-          npSetLED(0, 0,255,255); 
-          npSetLED(1, 0,255,255);
-          npSetLED(2, 0,255,255);
-          npSetLED(3, 0,255,255);
-          npSetLED(4, 0,255,255);  
+          // Base da coluna central - Cor inicial azul/ciano
+          npSetLED(0, 0, 255, 255); 
+          npSetLED(1, 0, 255, 255);
+          npSetLED(2, 0, 255, 255);
+          npSetLED(3, 0, 255, 255);
+          npSetLED(4, 0, 255, 255);  
           break;
-
+  
       case 2:
-          // Acende a base + um nível acima
-          npSetLED(0, 0,255,255); 
-          npSetLED(1, 0,255,255);
-          npSetLED(2, 0,255,255);
-          npSetLED(3, 0,255,255);
-          npSetLED(4, 0,255,255);  
-          npSetLED(5, 0,255,0);
-          npSetLED(6, 0,255,0);
-          npSetLED(7, 0,255,0);
-          npSetLED(8, 0,255,0);
-          npSetLED(9, 0,255,0); 
-
+          // Base + um nível acima com transição suave
+          for (int i = 0; i < 5; i++) {
+              npSetLED(i, 0, 255, 255);  // Azul/ciano na base
+          }
+          for (int i = 5; i < 10; i++) {
+              int r = map(i, 5, 9, 0, 255);  // Degradê vermelho
+              npSetLED(i, r, 255 - r, 0);   // Transição de vermelho para laranja
+          }
           break;
-
+  
       case 3:
-          // Acende a coluna central mais alto + inicia laterais
-          npSetLED(0, 0,255,255); 
-          npSetLED(1, 0,255,255);
-          npSetLED(2, 0,255,255);
-          npSetLED(3, 0,255,255);
-          npSetLED(4, 0,255,255);  
-          npSetLED(5, 0,255,0);
-          npSetLED(6, 0,255,0);
-          npSetLED(7, 0,255,0);
-          npSetLED(8, 0,255,0);
-          npSetLED(9, 0,255,0); 
-          npSetLED(10, 255,255,0);
-          npSetLED(11, 255,255,0);
-          npSetLED(12, 255,255,0);
-          npSetLED(13, 255,255,0);
-          npSetLED(14, 255,255,0); 
+          // Base + mais um nível mais alto + transição
+          for (int i = 0; i < 5; i++) {
+              npSetLED(i, 0, 255, 255);  // Azul/ciano
+          }
+          for (int i = 5; i < 10; i++) {
+              int r = map(i, 5, 9, 0, 255);  // Degradê para laranja
+              npSetLED(i, r, 255 - r, 0);
+          }
+          for (int i = 10; i < 15; i++) {
+              int r = map(i, 10, 14, 255, 255);  // Amarelo
+              npSetLED(i, r, 255, 0);
+          }
           break;
-
+  
       case 4:
-          // Acende todas as colunas até o topo
-          npSetLED(0, 0,255,255); 
-          npSetLED(1, 0,255,255);
-          npSetLED(2, 0,255,255);
-          npSetLED(3, 0,255,255);
-          npSetLED(4, 0,255,255);  
-          npSetLED(5, 255, 0, 0); 
-          npSetLED(6, 255, 0, 0);
-          npSetLED(7, 255, 0, 0);
-          npSetLED(8, 255, 0, 0);
-          npSetLED(9, 255, 0, 0); 
-          npSetLED(10, 255,255,0);
-          npSetLED(11, 255,255,0);
-          npSetLED(12, 255,255,0);
-          npSetLED(13, 255,255,0);
-          npSetLED(14, 255,255,0);
-          npSetLED(15, 255,100,0);
-          npSetLED(16, 255,100,0);
-          npSetLED(17, 255,100,0);
-          npSetLED(18, 255,100,0);
-          npSetLED(19, 255,100,0);
+          // Todos os LEDs até o topo com gradiente suave de azul para vermelho
+          for (int i = 0; i < 5; i++) {
+              npSetLED(i, 0, 255, 255);  // Azul/ciano
+          }
+          for (int i = 5; i < 10; i++) {
+              int r = map(i, 5, 9, 0, 255);  // Degradê de ciano para vermelho
+              npSetLED(i, r, 255 - r, 0);
+          }
+          for (int i = 10; i < 15; i++) {
+              int r = map(i, 10, 14, 255, 255);  // Amarelo
+              npSetLED(i, r, 255, 0);
+          }
+          for (int i = 15; i < 20; i++) {
+              int r = map(i, 15, 19, 255, 0);  // Degradê de amarelo para laranja
+              npSetLED(i, r, 100, 0); // Laranja
+          }
           break;
-
+  
       case 5:
-          // Acende a matriz toda simulando pico máximo
-          npSetLED(0, 0,255,255); 
-          npSetLED(1, 0,255,255);
-          npSetLED(2, 0,255,255);
-          npSetLED(3, 0,255,255);
-          npSetLED(4, 0,255,255);  
-          npSetLED(5, 255, 0, 0); 
-          npSetLED(6, 255, 0, 0);
-          npSetLED(7, 255, 0, 0);
-          npSetLED(8, 255, 0, 0);
-          npSetLED(9, 255, 0, 0); 
-          npSetLED(10, 255,255,0);
-          npSetLED(11, 255,255,0);
-          npSetLED(12, 255,255,0);
-          npSetLED(13, 255,255,0);
-          npSetLED(14, 255,255,0);
-          npSetLED(15, 255,100,0);
-          npSetLED(16, 255,100,0);
-          npSetLED(17, 255,100,0);
-          npSetLED(18, 255,100,0);
-          npSetLED(19, 255,100,0);
-          npSetLED(20, 255, 0, 0); 
-          npSetLED(21, 255, 0, 0);
-          npSetLED(22, 255, 0, 0);
-          npSetLED(23, 255, 0, 0);
-          npSetLED(24, 255, 0, 0);     
+          // Matriz inteira com efeito de pico máximo (gradiente intenso)
+          for (int i = 0; i < 5; i++) {
+              npSetLED(i, 0, 255, 255);  // Azul/ciano
+          }
+          for (int i = 5; i < 10; i++) {
+              int r = map(i, 5, 9, 0, 255);  // Degradê de azul para vermelho
+              npSetLED(i, r, 255 - r, 0);
+          }
+          for (int i = 10; i < 15; i++) {
+              int r = map(i, 10, 14, 255, 255);  // Amarelo
+              npSetLED(i, r, 255, 0);
+          }
+          for (int i = 15; i < 20; i++) {
+              int r = map(i, 15, 19, 255, 0);  // Degradê de amarelo para laranja
+              npSetLED(i, r, 100, 0);
+          }
+          for (int i = 20; i < 25; i++) {
+              int r = map(i, 20, 24, 255, 0);  // Degradê de laranja para vermelho
+              npSetLED(i, r, 0, 0);
+          }
           break;
   }
     // Atualiza a matriz.
