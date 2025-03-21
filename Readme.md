@@ -65,6 +65,10 @@ O sistema mantém um **histórico de eventos**, que pode ser acessado pelos cuid
 - **Algoritmos de Processamento de Sinal**: Algoritmos de FFT (Transformada Rápida de Fourier) para análise de frequências e detecção de padrões.
 - **Notificação e Aplicativos Móveis**: Ferramentas para envio de notificações em tempo real via SMS ou apps móveis.
 
+# Video mostrando o funcionamento do projeto na pratica
+link do video no drive
+https://drive.google.com/file/d/1r50rOyX4m-huzhLOL7LpYVXT5uz1cGZq/view?usp=sharing
+
 ## Considerações Finais
 
 Este projeto visa melhorar a segurança e qualidade de vida de pessoas vulneráveis, como idosos, crianças e deficientes, através da tecnologia de monitoramento de áudio. Ao integrar sensores de áudio e algoritmos de processamento de sinais, o sistema pode detectar incidentes de forma eficaz, alertando rapidamente os responsáveis e melhorando as chances de uma resposta rápida.
