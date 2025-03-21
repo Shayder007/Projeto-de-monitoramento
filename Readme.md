@@ -68,6 +68,8 @@ O sistema mantém um **histórico de eventos**, que pode ser acessado pelos cuid
 # Video mostrando o funcionamento do projeto na pratica
 link do video no drive
 https://drive.google.com/file/d/1r50rOyX4m-huzhLOL7LpYVXT5uz1cGZq/view?usp=sharing
+os led sao ativados quando reconhecem o som 
+musicas,voz,passos,barulhos do cotidiano nao ativam os leds, somente sons realmente especiais, como barulho de quedas, choro de bebes e ate gritos de socorro
 
 ## Considerações Finais
 
